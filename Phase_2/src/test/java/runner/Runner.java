@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 //import io.cucumber.testng.AbstractTestNGCucumberTests;
 //import io.cucumber.testng.CucumberOptions;
 //import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -16,16 +17,14 @@ import io.cucumber.junit.CucumberOptions;
 	@CucumberOptions(features = {"src/test/resources/Feature"},
 			glue= {"stepdefinitions"},
 			monochrome = true,
-			plugin = {"pretty", "html:target/cucumberRpt.html"}
-			//plugin = {"pretty", "jason:target/jasonRpt.jason"}
+		    plugin = {"pretty", "json:target/JsonReport/jsonrpt.json"}
 			)
-	public class Runner{
-	/*public class TestRunner extends AbstractTestNGCucumberTests {
-		@Override
+	public class Runner extends AbstractTestNGCucumberTests {
+		/*@Override
 		@DataProvider(parallel=false)
 		public Object[][] scenarios(){
-			return super.scenarios();
-		}*/
+			return super.scenarios();}*/
+		
 	    }
 
 
